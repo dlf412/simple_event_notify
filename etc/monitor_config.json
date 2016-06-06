@@ -1,0 +1,50 @@
+{
+    "db_url": "mysql://root:123@localhost/basic_db",
+    "scan_interval": 60,
+    "scan_range": 300,
+    "strategy": {
+        "long": {
+            "task": [
+                {
+                    "duration": 30,
+                    "times": 5
+                },
+                {
+                    "duration": 40,
+                    "times": 2
+                },
+                {
+                    "duration": 60,
+                    "times": 1
+                }
+            ]
+        },
+        "moment": {
+            "task_retry": 10,
+            "http_error": 5,
+            "ioerror": 1,
+            "default": 1
+        }
+    },
+    "alarm":
+    {
+        "email":
+        {
+            "url": "http://host:port/sender/mail",
+            "tos": ["aaa@bbb.com"]
+        },
+        "sms":
+        {
+        },
+        "weixin":
+        {
+        },
+        "other":
+        {
+        }
+    },
+    "agent_bind": {
+        "host": "0.0.0.0",
+        "port": 9999
+    }
+}
